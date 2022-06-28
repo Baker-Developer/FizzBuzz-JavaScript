@@ -62,17 +62,26 @@ function displayNumbers(numbers) {
     tableBody.innerHTML = "";
 
     for (let i = 0; i < numbers.length; i += 5) {
-        
+
         let tableRow = document.importNode(templateRow.content, true);
 
         // grab use to put into array
         let rowCols = tableRow.querySelectorAll("td");
+        rowCols[0].classList.add(numbers[i]);
         rowCols[0].textContent = numbers[i];
-        rowCols[1].textContent = numbers[i+1];
-        rowCols[2].textContent = numbers[i+2];
-        rowCols[3].textContent = numbers[i+3];
-        rowCols[4].textContent = numbers[i+4];
-        rowCols[5].textContent = numbers[i+5];
+
+        rowCols[1].classList.add(numbers[i + 1]);
+        rowCols[1].textContent = numbers[i + 1];
+
+        rowCols[2].classList.add(numbers[i + 2]);
+        rowCols[2].textContent = numbers[i + 2];
+
+        rowCols[3].classList.add(numbers[i + 3]);
+        rowCols[3].textContent = numbers[i + 3];
+
+        rowCols[4].classList.add(numbers[i + 4]);
+        rowCols[4].textContent = numbers[i + 4];
+
 
 
         tableBody.appendChild(tableRow);
@@ -83,6 +92,6 @@ function displayNumbers(numbers) {
     }
 
     // document.getElementById("results").innerHTML = tableBody;
-   
+
 
 }

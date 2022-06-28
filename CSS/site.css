@@ -83,6 +83,19 @@ main>.container {
     color: var(--secondary-color)
 }
 
+.Fizz {
+    color:rgb(19, 209, 76);
+}
+
+.Buzz {
+    color:royalblue;
+}   
+
+.FizzBuzz {
+    color:red;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 400px) {
     .responsiveicon {
         font-size: 18vw;
