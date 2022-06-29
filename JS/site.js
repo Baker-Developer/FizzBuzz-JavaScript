@@ -85,13 +85,6 @@ function displayNumbers(numbers) {
 
 
         tableBody.appendChild(tableRow);
-        // rowCols[6].textContent = numbers[i+6]
-        // rowCols[7].textContent = numbers[i+7]
-        // rowCols[8].textContent = numbers[i+8]
-        // rowCols[9].textContent = numbers[i+9] 
     }
-
-    // document.getElementById("results").innerHTML = tableBody;
-
 
 }

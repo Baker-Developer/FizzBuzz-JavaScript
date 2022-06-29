@@ -14,15 +14,15 @@
     <!-- Convert this to an external style sheet -->
     <link href="/CSS/site.css" rel="stylesheet">
     <link href="/CSS/prism.css" rel="stylesheet">
-    <link href="IMG/favicon.svg" rel="icon" type="image/svg">
+    <link href="IMG/favicon.ico" rel="icon" type="image/ico">
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- ----Nav Sectoion----  -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="IMG/favicon.svg" class="d-inline-block align-text-top"
-                    width="32" height="32" alt="Baker Logo"> Fizz Buzz</a>
+            <a class="navbar-brand" href="#"><img src="IMG/favicon.svg" class="d-inline-block align-text-top" width="32"
+                    height="32" alt="Baker Logo"> Fizz Buzz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,20 +52,109 @@
     <!-- ----Main Sectoion----  -->
     <main class="flex-shrink-0">
         <div class="container  py-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for Fizz Buzz</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                         
+                        // Get Values From The Page
+// starts or controller function
+function getValues() {
+    //get values from page
+    let startValue = document.getElementById("fizzValue").value;
+    let endValue = document.getElementById("buzzValue").value;
+    // Valadition Is Needed For Input
+    //parse into integers
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+        // call generateNumbers
+        let numbers = generateNumbers(startValue, endValue);
+        //call displaynumbers
+        displayNumbers(numbers);
+    } else {
+        alert("Enter Intergers Only")
+    }
+
+}
+
+
+// Generate Numbers Between Start Value and End Value
+// logic function(s)
+function generateNumbers(sValue, eValue) {
+
+    let numbers = [];
+
+
+    // get all numbers fron start to end
+    // check to see if divisible by (3 and 5)
+    // check to see if divisible by (3)
+    // check to see if divisible by (5)
+    for (let i = 1; i <= 100; i++) {
+        if (i % sValue == 0 && i % eValue == 0) {
+            numbers.push("FizzBuzz");
+        } else if (i % sValue == 0) {
+            numbers.push("Fizz");
+        } else if (i % eValue == 0) {
+            numbers.push("Buzz");
+        } else {
+            numbers.push(i);
+        }
+
+    }
+
+    return numbers;
+}
+
+// loops over the array and creates a tablerow for each item
+// display or view function
+function displayNumbers(numbers) {
+
+    // get the table body element from the page 
+    let tableBody = document.getElementById("results");
+
+    // get template row
+    let templateRow = document.getElementById("fbTemplate");
+
+    // clear table first
+    tableBody.innerHTML = "";
+
+    for (let i = 0; i < numbers.length; i += 5) {
+
+        let tableRow = document.importNode(templateRow.content, true);
+
+        // grab use to put into array
+        let rowCols = tableRow.querySelectorAll("td");
+        rowCols[0].classList.add(numbers[i]);
+        rowCols[0].textContent = numbers[i];
+
+        rowCols[1].classList.add(numbers[i + 1]);
+        rowCols[1].textContent = numbers[i + 1];
+
+        rowCols[2].classList.add(numbers[i + 2]);
+        rowCols[2].textContent = numbers[i + 2];
+
+        rowCols[3].classList.add(numbers[i + 3]);
+        rowCols[3].textContent = numbers[i + 3];
+
+        rowCols[4].classList.add(numbers[i + 4]);
+        rowCols[4].textContent = numbers[i + 4];
+
+
+
+        tableBody.appendChild(tableRow);
+    }
+
+}
                     </code>
                     </pre>
                 </div>
-                <div class="col-lg-4" >
+                <div class="col-lg-4">
                     <p>#</p>
                     <h5>#</h5>
                     <p>#</p>
                 </div>
-                
+
             </div>
         </div>
     </main>
@@ -82,7 +171,7 @@
 
                 </div>
                 <div class="col d-flex align-items-center justify-content-start justify-content-center">
-                    <img src="IMG/bbakerdarkalt.svg" alt="Baker Logo" height="35">
+                    <img src="IMG/benjaminbakermain.svg" alt="Baker Logo" height="35">
                 </div>
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
                     <div class="row">
