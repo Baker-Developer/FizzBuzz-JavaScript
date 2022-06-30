@@ -44,9 +44,9 @@ h6 {
 
 code[class*="language-"],
 pre[class*="language-"] {
-white-space: pre-wrap;
-word-break: break-all;
-word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 
@@ -84,23 +84,28 @@ main>.container {
 }
 
 .Fizz {
-    color:rgb(19, 209, 76);
-}
-
-.Buzz {
-    color:royalblue;
-}   
-
-.FizzBuzz {
-    color:red;
+    color: rgb(14, 212, 73);
     font-weight: bold;
 }
 
+.Buzz {
+    color: royalblue;
+    font-weight: bold;
+}
 
+.FizzBuzz {
+    color: red;
+    font-weight: 999;
+}
+
+@media screen and (max-width: 991.33px) {
+    .border-end {
+        border: none !important;
+    }
+}
 
 @media screen and (max-width: 400px) {
     .responsiveicon {
         font-size: 18vw;
     }
 }
-

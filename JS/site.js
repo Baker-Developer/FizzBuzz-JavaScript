@@ -11,7 +11,7 @@ function getValues() {
 
     if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
         // call generateNumbers
-        let numbers = generateNumbers(startValue, endValue);
+        let numbers = generateNumbersAlt2(startValue, endValue);
         //call displaynumbers
         displayNumbers(numbers);
     } else {
@@ -47,6 +47,57 @@ function generateNumbers(sValue, eValue) {
 
     return numbers;
 }
+
+
+// Generate Numbers Between Start Value and End Value
+// using a switch statement as an alternative is an option
+function generateNumbersAlt(sValue, eValue) {
+    let numbers = [];
+    let Fizz = false;
+    let Buzz = false;
+
+    for (let i = 1; i <= 100; i++) {
+        Fizz = i % sValue == 0;
+        Buzz = i % eValue == 0;
+
+        switch (true) {
+            case Fizz && Buzz: {
+                numbers.push('FizzBuzz');
+                break;
+            }
+            case Fizz: {
+                numbers.push('Fizz');
+                break;
+            }
+            case Buzz: {
+                numbers.push('Buzz');
+                break;
+            }
+            default: {
+                numbers.push(i);
+                break;
+            }
+
+        }
+    }
+    return numbers;
+}
+
+
+// Generate Numbers Between Start Value and End Value
+// using a ternary operator as an another option
+function generateNumbersAlt2(sValue, eValue) {
+
+    let numbers = [];
+
+    for (let i = 0; i <= 100; i++) {
+        let value = ((i % sValue == 0 ? 'Fizz' : '') + (i % eValue == 0 ? 'Buzz' : '') || i);
+        numbers.push(value);
+    }
+
+    return numbers;
+}
+
 
 // loops over the array and creates a tablerow for each item
 // display or view function
