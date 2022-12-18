@@ -11,7 +11,7 @@ function getValues() {
 
     if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
         // call generateNumbers
-        let numbers = generateNumbersAlt2(startValue, endValue);
+        let numbers = generateNumbers(startValue, endValue);
         //call displaynumbers
         displayNumbers(numbers);
     } else {
